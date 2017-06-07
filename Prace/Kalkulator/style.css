@@ -100,29 +100,20 @@ button:active{
 
 
 @media (max-width: 480px) {
-.calculator{
-	margin-top:10px;
-	margin-left: auto;
-	margin-right: auto;
-	width:270px;
-	grid-template-columns:1fr;
-	grid-template-rows:50px 120px 350px;
+	.calculator{
+		width:100%;
+	}
 	
 }
-.result{
-	grid-column:1/1;
-}
-.numbers,.operators{
-margin:0;
-grid-gap:3px;
-justify-content: center;
-}
+@media (max-width:380px){
 button{
-	height:45px;
-	width:45px;
+	height:37px;
+	width:37px;
 }
-.result{
-	border:1px solid black;
-	margin:5px;
+.calculator{
+	grid-gap:0px;
 }
+.operators,.numbers{
+	grid-gap:0px;
 }
+};

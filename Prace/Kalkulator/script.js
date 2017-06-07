@@ -12,11 +12,16 @@ var numbers=numbers_div.querySelectorAll('button');
 document.querySelector('.result').textContent=result;	//funkcja podmieniająca wynik w okienku, gdy jest wywoływana
 }
 
+
 	function making_numbers(){			// funkcja nadająca wartość buttonom odpowiedzialnym za wpisywanie liczb 
 for(i=0; i<numbers.length-1; i++){
 numbers[i].value=i;	
 numbers[i].addEventListener('click', function wypisanie(){
 var liczba=this.value;				// pobieramy wartość z buttona, którego aktualnie klikamy
+if(result.length>16){
+		alert('Przykro mi, liczba jest za długa');
+		return;
+	}
 result=result+liczba;			// kliknięty button wrzuca jego wartość (liczbę) do okienka z wynikiem
 calling_result();
  });
@@ -59,6 +64,10 @@ buttons_operators[i].addEventListener('click',function operators_add(){			//funk
 	}
 float_available=true;					//resetujemy możliwość umieszczenia kropki, nowy operator matematyczny rozpoczyna kolejne wyrażenie
 var operator=this.value;
+if(result.length>16){
+		alert('Przykro mi, liczba jest za długa');
+		return;
+	}
 result=result+operator;
 calling_result();		//wypisujemy wynik
 
