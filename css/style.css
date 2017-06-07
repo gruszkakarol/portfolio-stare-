@@ -227,6 +227,17 @@ text-decoration: none;
 	
 
 }
+.section_portfolio_item:focus  .section_portfolio_item_repository{   /* :( */
+	opacity:0.9;
+	
+}
+.section_portfolio_item:focus  .section_portfolio_item_live{
+	opacity:0.9;
+	
+}
+
+
+
 .section_portfolio_item_repository{
 	position:absolute;
 	top:0;
@@ -278,4 +289,13 @@ position:absolute;
 .section_contact_heading{
 	width:100%;
 	display:block;
+}
+@media (max-width: 480px){
+.header_text{
+	display:none;
+}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+
+
 }
