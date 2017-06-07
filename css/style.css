@@ -84,8 +84,11 @@ cursor:pointer;
 .nav_menu_button:hover, .nav_menu_button:focus{
 	opacity:1;
 	transition: all 0.3s ease-in-out;
+	outline:none;
 }
-
+.nav_menu_button:active{
+	outline:none;
+}
 .section_homepage{
 
 	justify-content: center;
@@ -294,8 +297,23 @@ position:absolute;
 .header_text{
 	display:none;
 }
+.nav_menu_button{
+font-size:2.5em;
+}
+
+}
+@media(max-width:360px){
+	.nav_menu_button{
+		font-size:2em;
+	}
 }
 @media (min-width: 768px) and (max-width: 979px) {
 
 
+}
+@media(max-width:1024px){
+	.footer{
+	position:relative;
+
+}
 }
