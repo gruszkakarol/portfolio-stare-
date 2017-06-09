@@ -284,6 +284,7 @@ position:absolute;
 	flex-wrap:wrap;
 	text-align:center;
 	font-size:1.5em;
+	font-weight:200;
 }
 .section_contact_link:active,.section_contact_link:visited,.section_contact_link:link{
 	text-decoration: none;
