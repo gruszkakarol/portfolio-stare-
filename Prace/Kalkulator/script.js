@@ -12,7 +12,6 @@ var numbers=numbers_div.querySelectorAll('button');
 document.querySelector('.result').textContent=result;	//funkcja podmieniająca wynik w okienku, gdy jest wywoływana
 }
 
-
 	function making_numbers(){			// funkcja nadająca wartość buttonom odpowiedzialnym za wpisywanie liczb 
 for(i=0; i<numbers.length-1; i++){
 numbers[i].value=i;	
@@ -60,7 +59,7 @@ buttons_operators[i].addEventListener('click',function operators_add(){			//funk
 	}
 float_available=true;					//resetujemy możliwość umieszczenia kropki, nowy operator matematyczny rozpoczyna kolejne wyrażenie
 var operator=this.value;
-result+operator;
+result=result+operator;
 calling_result();		//wypisujemy wynik
 
 });

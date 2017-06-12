@@ -7,7 +7,7 @@ body{
 	margin:0;
 	padding:0;
 	font-family: 'Oswald', sans-serif;
-	
+
 }
 .calculator{
 	background-color: #1974d0;
@@ -23,7 +23,7 @@ body{
 	border-radius:10px;
 	margin-top: 100px;
 
-	
+
 }
 button{
 	border:none;
@@ -68,7 +68,7 @@ button{
 	box-shadow:0px 4px #ce3333;
 }
 button:hover{
-	background-color:#423e3e; 
+	background-color:#423e3e;
 	color:white;
 	transition: 0.4s all ease-in-out;
 		box-shadow:0px 4px #565151;
@@ -80,13 +80,13 @@ button:active{
 
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
 
 
  }
 
 
-@media (min-width: 768px) and (max-width: 979px) { 
+@media (min-width: 768px) and (max-width: 979px) {
 
 
 }
@@ -94,6 +94,7 @@ button:active{
 
 @media (max-width: 767px) {
 .calculator{
+	height:410px;
 	margin:0 auto;
 }
 
@@ -101,20 +102,29 @@ button:active{
 
 
 @media (max-width: 480px) {
-	.calculator{
-		width:100%;
-	}
-	
-}
-@media (max-width:380px){
-button{
-	height:37px;
-	width:37px;
-}
 .calculator{
-	grid-gap:0px;
+	margin-top:10px;
+	margin-left: auto;
+	margin-right: auto;
+	width:270px;
+	grid-template-columns:1fr;
+	grid-template-rows:50px 120px 350px;
+
 }
-.operators,.numbers{
-	grid-gap:0px;
+.result{
+	grid-column:1/1;
 }
-};
+.numbers,.operators{
+margin:0;
+grid-gap:3px;
+justify-content: center;
+}
+button{
+	height:45px;
+	width:45px;
+}
+.result{
+	border:1px solid black;
+	margin:5px;
+}
+}
