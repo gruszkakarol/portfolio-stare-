@@ -27,9 +27,9 @@ html,body{
 	background-color:#1d1d1e;
 	color:white;
 	height:100%;
-	
 
-	
+
+
 }
 .header{
 	display:flex;
@@ -66,7 +66,7 @@ html,body{
 	position:absolute;
 	bottom:-1em;
 	left:0;
-	
+
 }
 .nav_menu_button{
 border-radius:50%;
@@ -102,11 +102,11 @@ cursor:pointer;
 	position: relative;
 	flex-wrap:wrap;
 
-	
+
 
 }
 .footer{
-	
+
 	color:white;
 	text-align: center;
 	padding:0.5em;
@@ -122,7 +122,7 @@ cursor:pointer;
 }
 .active{
 	transition:all 0.5s ease-in-out;
-	
+
 }
 .hidden{
 	transform: translateX(-200%);
@@ -143,7 +143,7 @@ cursor:pointer;
 	font-weight:200;
 	letter-spacing: 0.5px;
 	flex-wrap:wrap;
-	
+
 }
 .section_about_heading,.section_portfolio_heading{
 	font-weight: 200;
@@ -197,7 +197,7 @@ color:white;
 	font-size:1.3em;
 	font-weight:200;
 	letter-spacing: 0.5px;
-	
+
 }
 .section_portfolio_collection{
 	display:flex;
@@ -221,22 +221,22 @@ text-decoration: none;
 }
 .section_portfolio_item:hover  .section_portfolio_item_repository{
 	opacity:0.9;
-	
+
 }
 
 
 .section_portfolio_item:hover  .section_portfolio_item_live{
 	opacity:0.9;
-	
+
 
 }
 .section_portfolio_item:focus  .section_portfolio_item_repository{   /* :( */
 	opacity:0.9;
-	
+
 }
 .section_portfolio_item:focus  .section_portfolio_item_live{
 	opacity:0.9;
-	
+
 }
 
 
@@ -274,6 +274,11 @@ position:absolute;
 }
 .calculator{
 	background-image: url('../img/kalkulator.png');
+	background-size:cover;
+	background-position: center;
+}
+.milionerzy{
+	background-image: url('../img/milionerzy.png');
 	background-size:cover;
 	background-position: center;
 }
