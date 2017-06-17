@@ -6,7 +6,7 @@ html,body{
   margin:0;
   height:100%;
   min-height:100%;
-  overflow:hidden;
+  /*overflow:hidden;*/
 }
 .board{
   width:100%;
@@ -75,6 +75,9 @@ flex-wrap:wrap;
   transition:0.3s all ease-in-out;
   position: relative;
 }
+.answer:active,.answer:focus{
+  outline:none;
+}
 .award{
   border-top: 1px solid black;
   display:flex;
@@ -91,7 +94,6 @@ flex-wrap:wrap;
   transition:0.3s all ease-in-out;
   color:#e29d06;
 }
-
 .answer1::after,.answer2::after,.answer3::after,.answer4::after{
 position:absolute;
 left:0;
@@ -118,7 +120,20 @@ color:#e29d06;
 .award:last-child{
   border-top:0px;
 }
-
+.active_answer{
+  background-color:#217023;
+  transition: 0.3 all ease-in-out;
+}
+.active_answer:hover,.active_answer:focus{
+  color:white;
+}
+.bad_answer{
+  background-color:#821717;
+  color:white;
+}
+.bad_answer:focus,.bad_answer:hover{
+  color:white;
+}
 @media(min-width:1000px){
   .board{
     font-size:1.5em;

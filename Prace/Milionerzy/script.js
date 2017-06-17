@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", function wywolanie() {
   buttons();
 });
 var number = 0;
-var win_score = 1;
+var win_score = 0;
 var getting_board = document.querySelector('.board');
 var getting_question = getting_board.querySelector('.question');
 var getting_answer = getting_board.querySelector('.answers');
 var getting_answers = getting_answer.querySelectorAll('.answer');
 var getting_prize = getting_board.querySelector('.prize');
 var getting_awards = getting_prize.querySelectorAll('.award');
-
+var this_is=undefined;
 function changing_questions() {
   get_number();
   if (questions[number].been_or_not === true) {
@@ -116,6 +116,7 @@ function changing_questions() {
 
 function win() {
   win_score++;
+  this_is.classList.remove('active_answer');
   if (win_score===10){
   getting_question.innerHTML='<span class="information">Brawo! Udało Ci się wygrać! Oto Twój milion!</span>'+'<span class="new_game" onclick=changing_questions()>CO POWIESZ NA KOLEJNY MILION? </span>';
     making_things_clear();
@@ -133,7 +134,7 @@ function get_number() {
 };
 
 function lose() {
-  win_score=1;
+  this_is.classList.remove('bad_answer');
   making_things_clear();
 getting_question.innerHTML='<span class="information">Niestety przegrałeś!</span>'+'<span class="new_game" onclick=changing_questions()>ZACZNIJ NOWĄ GRĘ! </span>';
 
@@ -143,15 +144,22 @@ function buttons() {
   for (i = 0; i < getting_answers.length; i++) {
     getting_answers[i].addEventListener('click', function answering() {
         if (this.value === questions[number].correct_answer) {
-
-          win();
+          this.classList.add('active_answer');
+          this_is=this;
+          setTimeout('win()',2000);
         } else {
-          lose();
+          this_is=this;
+          this.classList.add('bad_answer');
+          setTimeout('lose()',2000);
         };
       });
     };
 };
 function making_things_clear(){
+  win_score=0;
+  for(i=0;i<questions.length;i++){
+    questions[i].been_or_not=false;
+  }
   for (i = 1; i < getting_awards.length; i++) {
     getting_awards[i].classList.remove('active');
   };
@@ -159,4 +167,8 @@ function making_things_clear(){
   for (i = 0; i < getting_answers.length; i++){
   getting_answers[i].textContent ="";
     }
+}
+function check_addcolor(){
+
+
 }
