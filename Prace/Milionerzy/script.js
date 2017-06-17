@@ -115,18 +115,21 @@ function changing_questions() {       // funkcja losująca pytania
 };
 
 function win() {
-  var awards=['100zł','500zł','5000zł','10000zł','25000zł','50000zł','100000zł','2500000zł','5000000zł','10000000zł'];
+  var awards=['0','100zł','500zł','5000zł','10000zł','25000zł','50000zł','100000zł','2500000zł','5000000zł'];
   win_score++;  //inkrementujemy wynik
   this_is.classList.remove('active_answer');    // jako iż funkcja ta zachodzi po kliknięciu i sprawdzeniu czy dana odpowiedź jest poprawna, usuwany jest kolor dodany podczas zaznaczenia odpowiedzi
   active_buttons(); //aktywowanie przycisków żeby można było je kliknąć, zapobiega to wielokrotnemu wyborowi odpowiedzi w czasie dwu sekundowej przerwy
   if (win_score===10){  // wygrana gry
+    if(window.matchMedia("(max-width:960px)").matches){
+      getting_prize.textContent="";
+    };
     disable_buttons();  //wyłączanie przycisków
-  getting_question.innerHTML='<span class="information">Brawo! Udało Ci się wygrać! Oto Twój milion!</span>'+'<span class="new_game" onclick=changing_questions()>CO POWIESZ NA KOLEJNY MILION? </span>';
+  getting_question.innerHTML='<span class="information">Brawo! Udało Ci się wygrać! Oto Twój milion!</span>'+'<span class="new_game" onclick=changing_questions(),active_buttons()>CO POWIESZ NA KOLEJNY MILION? </span>';
   making_things_clear();  //resetowanie gry, możliwość ponownego używania pytań, win_score ustawiony na 0
     return;
-  }
-  if(window.matchMedia("(max-width:960px)").matches){
-    getting_prize.textContent='Twoja aktualna wygrana to:'+awards[win_score];
+  };
+  if(window.matchMedia("(max-width:960px)").matches){ //żeby ładnie wyglądało na telefonie
+    getting_prize.textContent='Twoja aktualna wygrana to: '+awards[win_score];
   }
   else{
   for (i = 0; i < win_score; i++) { //zwiększanie nagrody
@@ -167,12 +170,14 @@ function buttons() {  //dodawanie on clicków do przycisków
     };
 };
 function making_things_clear(){ //resetowanie gry
-
+  if(window.matchMedia("(max-width:960px)").matches){
+    getting_prize.textContent="";
+  };
   win_score=0;    //wynik gry na 0
   for(i=0;i<questions.length;i++){    // przywracanie wszystkich pytań do gry
     questions[i].been_or_not=false;
   }
-  for (i = 1; i < getting_awards.length; i++) {   //usuwanie nagród
+  for (i = 0; i < getting_awards.length; i++) {   //usuwanie nagród
     getting_awards[i].classList.remove('active');
   };
 
