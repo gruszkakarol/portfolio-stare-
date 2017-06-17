@@ -117,9 +117,11 @@ function changing_questions() {
 function win() {
   win_score++;
   this_is.classList.remove('active_answer');
+  active_buttons();
   if (win_score===10){
+    disable_buttons();
   getting_question.innerHTML='<span class="information">Brawo! Udało Ci się wygrać! Oto Twój milion!</span>'+'<span class="new_game" onclick=changing_questions()>CO POWIESZ NA KOLEJNY MILION? </span>';
-    making_things_clear();
+  making_things_clear();
     return;
   }
   for (i = 0; i < win_score; i++) {
@@ -135,8 +137,9 @@ function get_number() {
 
 function lose() {
   this_is.classList.remove('bad_answer');
+  disable_buttons();
   making_things_clear();
-getting_question.innerHTML='<span class="information">Niestety przegrałeś!</span>'+'<span class="new_game" onclick=changing_questions()>ZACZNIJ NOWĄ GRĘ! </span>';
+getting_question.innerHTML='<span class="information">Niestety przegrałeś!</span>'+'<span class="new_game" onclick=changing_questions(),active_buttons()>ZACZNIJ NOWĄ GRĘ! </span>';
 
 };
 
@@ -146,16 +149,19 @@ function buttons() {
         if (this.value === questions[number].correct_answer) {
           this.classList.add('active_answer');
           this_is=this;
+          disable_buttons();
           setTimeout('win()',2000);
         } else {
           this_is=this;
           this.classList.add('bad_answer');
+          disable_buttons();
           setTimeout('lose()',2000);
         };
       });
     };
 };
 function making_things_clear(){
+
   win_score=0;
   for(i=0;i<questions.length;i++){
     questions[i].been_or_not=false;
@@ -171,4 +177,14 @@ function making_things_clear(){
 function check_addcolor(){
 
 
+}
+function disable_buttons(){
+  for(i=0;i<getting_answers.length;i++){
+    getting_answers[i].classList.add('not_active');
+  }
+}
+function active_buttons(){
+  for(i=0;i<getting_answers.length;i++){
+    getting_answers[i].classList.remove('not_active');
+  }
 }
