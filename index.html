@@ -22,14 +22,16 @@
 		</div>
 	</header>
 	<nav class="nav_menu">
-	<button class="nav_menu_button active_button"  title="Strona główna"><span class="nav_menu_button_icon icon-home"></span><span class="visuallyhidden">Home</span> </button>
-	<button class="nav_menu_button"	title="O mnie"><span class="nav_menu_button_icon icon-user"></span></button>
-	<button class="nav_menu_button"	title="Portfolio"><span class="nav_menu_button_icon icon-pencil"></span></button>
-	<button class="nav_menu_button"	title="Kontakt"><span class="nav_menu_button_icon icon-phone"></span></button>
+		<ul class="nav_menu_list">
+	<li><a href="#Strona_Glowna" class="nav_menu_item" title="Strona główna"><span class="nav_menu_button_icon icon-home"></span><span class="visuallyhidden">Strona Główna</span></a></li>
+	<li><a href="#O_mnie"  			class="nav_menu_item" title="O mnie"> 		<span class="nav_menu_button_icon icon-user"></span><span class="visuallyhidden">O Mnie</span></a></li>
+	<li><a href="#Portfolio"  	class="nav_menu_item" title="Portfolio">			<span class="nav_menu_button_icon icon-pencil"></span><span class="visuallyhidden">Portfolio</span></a></li>
+	<li><a href="#Kontakt"			class="nav_menu_item" title="Kontakt"> 	<span class="nav_menu_button_icon icon-phone"></span><span class="visuallyhidden">Kontakt</span></a></li>
+		</ul>
 	</nav>
 	<section aria-live="polite" class="sections">
 
-	<section class="section_homepage">
+	<section id="Strona_Glowna" class="section_homepage">
 
 	<h2 class="section_heading"> Kim jestem? </h2>
 	<p class="section_about_text">Nazywam się Karol Gruszka. Pochodzę z małej miejscowości Kamiennik w województwie Opolskim. Od zawsze kochałem tworzyć coś z niczego. W dzieciństwie zapalony "budowniczy" z klocków lego, trochę później zostałem muzykiem, a niedawno odkryłem swoją pasję do programowania, którą cały czas pielęgnuje. Moimi aspiracjami jest zostanie JS Ninja. </p>
@@ -39,7 +41,7 @@
 	</section>
 
 
-	<section class="section_about hidden">
+	<section id="Umiejetnosci" class="section_about hidden">
 	<h3 class="section_about_heading">Moje umiejętności:</h3>
 	<div class="section_about_skillset">
 	<span class="section_about_item devicon-html5-plain-wordmark" aria-hidden="true"></span>
@@ -52,7 +54,7 @@
 	<a href="https://github.com/Sniadekk" class="section_about_content_link"><span class="section_about_content_item devicon-github-plain-wordmark" aria-hidden="true"></span></a>
 	</section>
 
-	<section class="section_portfolio hidden">
+	<section id="Portfolio" class="section_portfolio hidden">
 	<h4 class="section_portfolio_heading">Moje prace:</h4>
 	<div class="section_portfolio_collection">
 	<div class="section_portfolio_item calculator">

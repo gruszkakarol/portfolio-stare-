@@ -68,7 +68,14 @@ html,body{
 	left:0;
 
 }
-.nav_menu_button{
+.nav_menu_list{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	flex-wrap:wrap;
+}
+.nav_menu_item{
 border-radius:50%;
 margin:0.1em;
 background-color: transparent;
@@ -81,12 +88,12 @@ transition: all 0.3s ease-in-out;
 outline:none;
 cursor:pointer;
 }
-.nav_menu_button:hover, .nav_menu_button:focus{
+.nav_menu_item:hover, .nav_menu_item:focus{
 	opacity:1;
 	transition: all 0.3s ease-in-out;
 	outline:none;
 }
-.nav_menu_button:active{
+.nav_menu_item:active{
 	outline:none;
 }
 .section_homepage{
@@ -303,13 +310,13 @@ position:absolute;
 .header_text{
 	display:none;
 }
-.nav_menu_button{
+.nav_menu_item{
 font-size:2.5em;
 }
 
 }
 @media(max-width:360px){
-	.nav_menu_button{
+	.nav_menu_item{
 		font-size:2em;
 	}
 }

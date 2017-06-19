@@ -6,7 +6,7 @@ buttons()
 
 function buttons(){
 var get_menu=document.querySelector('.nav_menu');
-var get_buttons=get_menu.querySelectorAll('.nav_menu_button');
+var get_buttons=get_menu.querySelectorAll('.nav_menu_item');
 for(i=0;i<get_buttons.length;i++){
 
 	var sections=['.section_homepage','.section_about','.section_portfolio','.section_contact'];
@@ -34,7 +34,7 @@ for(i=0;i<get_buttons.length;i++){
 		picking_section.classList.remove('hidden')
 
 
-	
+
 
 
 	});
